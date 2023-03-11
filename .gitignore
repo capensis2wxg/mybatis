@@ -1,0 +1,20 @@
+# 项目排除路径
+/godbatis/target/
+/godbatis-test/target/
+/javassist-test/target/
+/junit-test/target/
+/mybatis-001-introduction/target/
+/mybatis-002-crud/target/
+/mybatis-003-configuration/target/
+/mybatis-004-web/target/
+/mybatis-005-crud2/target/
+/mybatis-007-param/target/
+/mybatis-008-select/target/
+/mybatis-009-dynamic-sql/target/
+/mybatis-010-advanced-mapping/target/
+/mybatis-011-cache/target/
+/mybatis-012-generator1/target/
+/mybatis-013-generator2/target/
+/mybatis-014-page/target/
+/mybatis-015-annotation/target/
+/parse-xml-by-dom4j/target/
