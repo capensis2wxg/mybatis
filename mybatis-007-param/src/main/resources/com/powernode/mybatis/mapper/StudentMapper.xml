@@ -56,8 +56,7 @@
         告诉mybatis框架，我这个方法的参数类型是什么类型。
         mybatis框架自身带有类型自动推断机制，所以大部分情况下parameterType属性都是可以省略不写的。
 
-        SQL语句最终是这样的：
-            select * from t_student where id = ?
+        SQL语句最终是这样的：select * from t_student where id = ?
         JDBC代码是一定要给?传值的。
         怎么传值？ps.setXxx(第几个问号, 传什么值);
             ps.setLong(1, 1L);

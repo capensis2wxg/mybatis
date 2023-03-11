@@ -29,7 +29,7 @@ public class StudentMapperTest {
         // mapper是代理对象
         // selectByNameAndSex2是代理方法
         List<Student> students = mapper.selectByNameAndSex2("张三", '男');
-        students.forEach(student -> System.out.println(student));
+        students.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -38,7 +38,7 @@ public class StudentMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
         List<Student> students = mapper.selectByNameAndSex("张三", '男');
-        students.forEach(student -> System.out.println(student));
+        students.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -46,7 +46,6 @@ public class StudentMapperTest {
     public void testInsertStudentByPOJO(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-
         // POJO对象
         Student student = new Student();
         student.setName("张飞");
@@ -81,10 +80,10 @@ public class StudentMapperTest {
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
 
         // char --> Character
-        Character sex = Character.valueOf('男');
+        Character sex = '男';
         List<Student> students = mapper.selectBySex(sex);
 
-        students.forEach(student -> System.out.println(student));
+        students.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -99,7 +98,7 @@ public class StudentMapperTest {
 
         List<Student> students = mapper.selectByBirth(birth);
 
-        students.forEach(student -> System.out.println(student));
+        students.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -107,8 +106,8 @@ public class StudentMapperTest {
     public void testSelectByName(){
         SqlSession sqlSession = SqlSessionUtil.openSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-        List<Student> students = mapper.selectByName("李四");
-        students.forEach(student -> System.out.println(student));
+        List<Student> students = mapper.selectByName("赵六");
+        students.forEach(System.out::println);
         sqlSession.close();
     }
     @Test
@@ -116,7 +115,7 @@ public class StudentMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
         List<Student> students = mapper.selectById(1L);
-        students.forEach(student -> System.out.println(student));
+        students.forEach(System.out::println);
         sqlSession.close();
     }
 }

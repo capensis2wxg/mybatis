@@ -110,10 +110,8 @@ Parameters:
             ....
 
     提醒！！！！！！！！！！！！！！！！！！！！！！！
-        在IDEA的resources目录下新建多重目录的话，必须是这样创建：
-            com/powernode/mybatis/mapper
-        不能这样：
-            com.powernode.mybatis.mapper
+        在IDEA的resources目录下新建多重目录的话，必须是这样创建： com/powernode/mybatis/mapper
+        不能这样：com.powernode.mybatis.mapper
 
 
 

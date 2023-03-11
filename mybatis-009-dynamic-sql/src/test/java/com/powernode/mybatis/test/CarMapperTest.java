@@ -62,7 +62,7 @@ public class CarMapperTest {
         //List<Car> cars = mapper.selectByChoose(null,null,"新能源");
         // 全部都是空
         List<Car> cars = mapper.selectByChoose(null,null,null);
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -90,7 +90,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         List<Car> cars = mapper.selectByMultiConditionWithTrim("比亚迪", null, "");
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -106,7 +106,7 @@ public class CarMapperTest {
         //List<Car> cars = mapper.selectByMultiConditionWithWhere("", 2.0, "新能源");
         // 后面两个条件是空
         List<Car> cars = mapper.selectByMultiConditionWithWhere("比亚迪", null, "");
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -117,17 +117,14 @@ public class CarMapperTest {
 
         // 假设三个条件都不是空
         //List<Car> cars = mapper.selectByMultiCondition("比亚迪", 2.0, "新能源");
-
         // 假设三个条件都是空
         //List<Car> cars = mapper.selectByMultiCondition("", null, "");
-
         // 假设后两个条件不为空，第一个条件为空
         //List<Car> cars = mapper.selectByMultiCondition("", 2.0, "新能源");
-
         // 假设第一个条件不是空，后两个条件是空
         List<Car> cars = mapper.selectByMultiCondition("比亚迪", null, "");
 
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 }

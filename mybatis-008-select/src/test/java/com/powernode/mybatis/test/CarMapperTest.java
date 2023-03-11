@@ -25,7 +25,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         List<Car> cars = mapper.selectAllByMapUnderscoreToCamelCase();
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -34,7 +34,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         List<Car> cars = mapper.selectAllByResultMap();
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -52,7 +52,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         List<Map<String, Object>> maps = mapper.selectAllRetListMap();
-        maps.forEach(map -> System.out.println(map));
+        maps.forEach(System.out::println);
         sqlSession.close();
     }
 
@@ -89,7 +89,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.openSession();
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         List<Car> cars = mapper.selectAll();
-        cars.forEach(car -> System.out.println(car));
+        cars.forEach(System.out::println);
         sqlSession.close();
     }
     @Test

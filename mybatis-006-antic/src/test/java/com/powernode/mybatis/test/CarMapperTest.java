@@ -16,7 +16,6 @@ public class CarMapperTest {
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
         Car car = new Car(null,"9991", "凯美瑞", 30.0, "2020-11-11", "燃油车");
         mapper.insertCarUseGeneratedKeys(car);
-
         System.out.println(car);
 
         sqlSession.commit();
