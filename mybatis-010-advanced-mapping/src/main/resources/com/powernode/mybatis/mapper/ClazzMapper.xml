@@ -9,9 +9,8 @@
     <resultMap id="clazzResultMapStep" type="Clazz">
         <id property="cid" column="cid"/>
         <result property="cname" column="cname"/>
-        <collection property="stus"
-                    select="com.powernode.mybatis.mapper.StudentMapper.selectByCidStep2"
-                    column="cid" fetchType="eager" />
+        <collection property="stus" select="com.powernode.mybatis.mapper.StudentMapper.selectByCidStep2" column="cid" fetchType="eager" />
+
     </resultMap>
 
     <select id="selectByStep1" resultMap="clazzResultMapStep">

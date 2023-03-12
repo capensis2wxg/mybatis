@@ -21,7 +21,7 @@ public class CarMapperTest {
         CarMapper mapper2 = sqlSession2.getMapper(CarMapper.class);
 
         // 这行代码执行结束之后，实际上数据是缓存到一级缓存当中了。（sqlSession1是一级缓存。）
-        Car car1 = mapper1.selectById2(164L);
+        Car car1 = mapper1.selectById2(1L);
         System.out.println(car1);
 
         // 如果这里不关闭SqlSession1对象的话，二级缓存中还是没有数据的。
@@ -30,7 +30,7 @@ public class CarMapperTest {
         sqlSession1.close();
 
         // 这行代码执行结束之后，实际上数据会缓存到一级缓存当中。（sqlSession2是一级缓存。）
-        Car car2 = mapper2.selectById2(164L);
+        Car car2 = mapper2.selectById2(1L);
         System.out.println(car2);
 
         // 程序执行到这里的时候，会将sqlSession1这个一级缓存中的数据写入到二级缓存当中。
@@ -82,7 +82,7 @@ public class CarMapperTest {
 
         // 在这里执行了INSERT DELETE UPDATE中的任意一个语句。并且和表没有关系。
         CarMapper mapper = sqlSession.getMapper(CarMapper.class);
-        mapper.insertClazz(2000, "高三三班");
+        mapper.insertClazz(2000, "three");
 
         CarMapper mapper2 = sqlSession.getMapper(CarMapper.class);
         Car car2 = mapper2.selectById(164L);

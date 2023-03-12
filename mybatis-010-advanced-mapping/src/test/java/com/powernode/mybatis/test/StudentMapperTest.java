@@ -19,7 +19,7 @@ public class StudentMapperTest {
         System.out.println(student.getSname());
 
         // 程序执行到这里了，我想看看班级的名字
-        //System.out.println(student.getClazz().getCname());
+        System.out.println(student.getClazz().getCname());
 
         sqlSession.close();
     }

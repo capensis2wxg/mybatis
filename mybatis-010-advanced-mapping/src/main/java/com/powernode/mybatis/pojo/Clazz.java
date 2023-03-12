@@ -13,11 +13,7 @@ public class Clazz {
 
     @Override
     public String toString() {
-        return "Clazz{" +
-                "cid=" + cid +
-                ", cname='" + cname + '\'' +
-                ", stus=" + stus +
-                '}';
+        return "Clazz{" + "cid=" + cid + ", cname='" + cname + '\'' + ", stus=" + stus + '}';
     }
 
     public List<Student> getStus() {

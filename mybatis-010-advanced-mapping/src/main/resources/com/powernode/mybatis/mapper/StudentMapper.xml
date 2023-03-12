@@ -36,7 +36,7 @@
         <association property="clazz"
                      select="com.powernode.mybatis.mapper.ClazzMapper.selectByIdStep2"
                      column="cid"
-                     fetchType="eager"/>
+                     fetchType="lazy"/>
     </resultMap>
 
     <select id="selectByIdStep1" resultMap="studentResultMapByStep">
@@ -57,7 +57,6 @@
             <result property="cname" column="cname"/>
         </association>
     </resultMap>
-
     <select id="selectByIdAssociation" resultMap="studentResultMapAssociation">
         select
             s.sid,s.sname,c.cid,c.cname
